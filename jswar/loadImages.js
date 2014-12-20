@@ -23,3 +23,20 @@ function animation(target,imageArray,timeArray){
 	}
 
 }
+
+
+q = new Image();
+
+q.src = "soldiers.png"
+
+
+
+function spriteSheet(rows,cols){
+	this.rows = rows;
+	this.cols = cols;
+	this.coods=[0,0];
+	this.change = function(index){
+		this.coods[0] = Math.floor(index/this.cols);
+		this.coods[1] = index%this.cols
+	}
+}

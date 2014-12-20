@@ -66,6 +66,8 @@ soldier.prototype.attack = function(direction){
     }
 }
 
+soldier.prototype = new spriteSheet(4,3)
+
 function updateSoldiers(){
     soldiers.map(function(e){
         e.y+=e.vy;
@@ -86,6 +88,7 @@ function update(){
 function render(){
     soldiers.map(function(e){
         c.fillRect(e.x,e.y,10,10);
+        c.drawImage(q,e.x,e.y,10,10,0,0,e.width/e.cols,e.height/e.rows)
     })
     //renderMap(firstMap)
 }
@@ -99,3 +102,4 @@ soldiers.push(new soldier(3,3))
 
 
 setInterval(game,1000/fps)
+
